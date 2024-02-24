@@ -1,0 +1,121 @@
+*{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 100;
+}
+.content{
+    display: flex;
+    flex-direction: column;/* main axis vertical*/
+    height: 100vh;
+}
+.header, .main, .aside, .footer{
+    padding: 30px;
+}
+.header{
+    background: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header h1{
+    margin: 0 auto;    
+}
+
+
+
+.main{
+    background: slateblue;
+    flex-basis: 300px;
+    flex-grow: 2;
+    flex-shrink: 0;
+}
+.main__button{
+    display: block;
+    padding: 30px;
+}
+
+
+
+.aside{
+    background: lightcoral;
+    flex-basis: 200px;
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+.nav{
+    display: flex;
+    background-color: lightcoral;
+}
+.nav__li{
+    padding: 20px;
+}
+.nav__ul{
+    padding: 10px;                  /* Agrega relleno alrededor del contenido */
+    margin: 5px;                    /* Agrega márgenes entre cada opción */
+}
+.nav__li:hover{
+    color: #bbb;
+}
+.nav__li:hover > a{
+    color: #bbb;
+
+}
+.nav__li a {
+    color: aliceblue;
+    text-decoration: none;
+}
+.nav__li i{
+    width: 30px;
+    box-sizing: border-box;
+    text-align: center;
+    margin-right: 5px;
+}
+
+.footer{
+    background: slategrey;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contacto, .telefono {
+    display: inline-flex; /* Cambia el comportamiento a inline-flex */
+    align-items: center;
+    margin-right: 20px; /* Agrega espacio entre los elementos */
+}
+
+.contacto span, .telefono span {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.contacto a, .telefono a {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+
+
+@media screen and (min-width:600px){
+    .content{
+        display: grid;
+        grid-template-rows:80px repeat(4,1fr) 80px;
+        grid-template-columns: repeat(3,1fr);
+    }
+    /*trabajamos con area para hacer dinamico el cambio de pantalla*/
+    .header{
+        grid-column: 1 / span 3;
+    }
+    .main{
+        grid-row: 2 / 6;
+        grid-column: 1 / 3;
+    }
+    .aside{
+        grid-row: 2/6;
+    }
+    .footer{
+        grid-row: 6 / 7;
+        grid-column: 1 / span 3;
+    }
+    /*Forma de estructurar la pagina web con grid area*/
+}
